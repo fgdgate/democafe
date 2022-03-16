@@ -1,0 +1,768 @@
+   /* resset.dev • v5.0.2 */
+
+/* # =================================================================
+   # Global selectors
+   # ================================================================= */
+@charset "UTF-8";
+
+html {
+      box-sizing: border-box;
+      -webkit-text-size-adjust: 100%; /* Prevent adjustments of font size after orientation changes in iOS */
+      word-break: normal;
+      -moz-tab-size: 4;
+      tab-size: 4;
+}
+    
+*,
+::before,
+::after {
+      background-repeat: no-repeat; /* Set `background-repeat: no-repeat` to all elements and pseudo elements */
+      box-sizing: inherit;
+}
+    
+::before,
+::after {
+      text-decoration: inherit; /* Inherit text-decoration and vertical align to ::before and ::after pseudo elements */
+      vertical-align: inherit;
+}
+    
+* {
+      padding: 0; /* Reset `padding` and `margin` of all elements */
+      margin: 0;
+}
+    
+    /* # =================================================================
+       # General elements
+       # ================================================================= */
+    
+hr {
+      overflow: visible; /* Show the overflow in Edge and IE */
+      height: 0; /* Add the correct box sizing in Firefox */
+      color: inherit; /* Correct border color in Firefox. */
+}
+    
+details,
+main {
+      display: block; /* Render the `main` element consistently in IE. */
+}
+    
+summary {
+      display: list-item; /* Add the correct display in all browsers */
+}
+    
+small {
+      font-size: 80%; /* Set font-size to 80% in `small` elements */
+}
+    
+[hidden] {
+      display: none; /* Add the correct display in IE */
+}
+    
+abbr[title] {
+      border-bottom: none; /* Remove the bottom border in Chrome 57 */
+      /* Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari */
+      text-decoration: underline;
+      text-decoration: underline dotted;
+}
+    
+a {
+      text-decoration: none;
+      background-color: transparent; /* Remove the gray background on active links in IE 10 */
+}
+    
+a:active,
+a:hover {
+      outline-width: 0; /* Remove the outline when hovering in all browsers */
+}
+    
+code,
+kbd,
+pre,
+samp {
+      font-family: monospace, monospace; /* Specify the font family of code elements */
+}
+    
+pre {
+      font-size: 1em; /* Correct the odd `em` font sizing in all browsers */
+}
+    
+b,
+strong {
+      font-weight: bolder; /* Add the correct font weight in Chrome, Edge, and Safari */
+}
+    
+/* https://gist.github.com/unruthless/413930 */
+sub,
+sup {
+      font-size: 75%;
+      line-height: 0;
+      position: relative;
+      vertical-align: baseline;
+}
+    
+sub {
+      bottom: -0.25em;
+}
+    
+sup {
+      top: -0.5em;
+}
+    
+table {
+      border-color: inherit; /* Correct border color in all Chrome, Edge, and Safari. */
+      text-indent: 0; /* Remove text indentation in Chrome, Edge, and Safari */
+}
+    
+iframe {
+      border-style: none;
+}
+    
+/* # =================================================================
+# Forms
+# ================================================================= */
+    
+input {
+      border-radius: 0;
+}
+    
+[type='number']::-webkit-inner-spin-button,
+[type='number']::-webkit-outer-spin-button {
+      height: auto; /* Correct the cursor style of increment and decrement buttons in Chrome */
+}
+    
+[type='search'] {
+      -webkit-appearance: textfield; /* Correct the odd appearance in Chrome and Safari */
+      outline-offset: -2px; /* Correct the outline style in Safari */
+}
+    
+[type='search']::-webkit-search-decoration {
+      -webkit-appearance: none; /* Remove the inner padding in Chrome and Safari on macOS */
+}
+    
+textarea {
+      overflow: auto; /* Internet Explorer 11+ */
+      resize: vertical; /* Specify textarea resizability */
+}
+    
+button,
+input,
+optgroup,
+select,
+textarea {
+      font: inherit; /* Specify font inheritance of form elements */
+}
+    
+optgroup {
+      font-weight: bold; /* Restore the font weight unset by the previous rule */
+}
+    
+button {
+      overflow: visible; /* Address `overflow` set to `hidden` in IE 8/9/10/11 */
+}
+    
+button,
+select {
+      text-transform: none; /* Firefox 40+, Internet Explorer 11- */
+}
+    
+/* Apply cursor pointer to button elements */
+button,
+[type='button'],
+[type='reset'],
+[type='submit'],
+[role='button'] {
+      cursor: pointer;
+}
+    
+/* Remove inner padding and border in Firefox 4+ */
+button::-moz-focus-inner,
+[type='button']::-moz-focus-inner,
+[type='reset']::-moz-focus-inner,
+[type='submit']::-moz-focus-inner {
+      border-style: none;
+      padding: 0;
+}
+    
+/* Replace focus style removed in the border reset above */
+button:-moz-focusring,
+[type='button']::-moz-focus-inner,
+[type='reset']::-moz-focus-inner,
+[type='submit']::-moz-focus-inner {
+      outline: 1px dotted ButtonText;
+}
+    
+button,
+html [type='button'], /* Prevent a WebKit bug where (2) destroys native `audio` and `video`controls in Android 4 */
+[type='reset'],
+[type='submit'] {
+      -webkit-appearance: button; /* Correct the inability to style clickable types in iOS */
+}
+    
+/* Remove the default button styling in all browsers */
+button,
+input,
+select,
+textarea {
+      background-color: transparent;
+      border-style: none;
+}
+    
+a:focus,
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
+      outline-width: 0;
+}
+    
+/* Style select like a standard input */
+select {
+      -moz-appearance: none; /* Firefox 36+ */
+      -webkit-appearance: none; /* Chrome 41+ */
+}
+    
+select::-ms-expand {
+      display: none; /* Internet Explorer 11+ */
+}
+    
+select::-ms-value {
+      color: currentColor; /* Internet Explorer 11+ */
+}
+    
+legend {
+      border: 0; /* Correct `color` not being inherited in IE 8/9/10/11 */
+      color: inherit; /* Correct the color inheritance from `fieldset` elements in IE */
+      display: table; /* Correct the text wrapping in Edge and IE */
+      max-width: 100%; /* Correct the text wrapping in Edge and IE */
+      white-space: normal; /* Correct the text wrapping in Edge and IE */
+      max-width: 100%; /* Correct the text wrapping in Edge 18- and IE */
+}
+    
+::-webkit-file-upload-button {
+      /* Correct the inability to style clickable types in iOS and Safari */
+      -webkit-appearance: button;
+      color: inherit;
+      font: inherit; /* Change font properties to `inherit` in Chrome and Safari */
+}
+    
+/* Replace pointer cursor in disabled elements */
+[disabled] {
+      cursor: default;
+}
+    
+/* # =================================================================
+# Specify media element style
+# ================================================================= */
+    
+img {
+      max-width: 100%;
+      border-style: none; /* Remove border when inside `a` element in IE 8/9/10 */
+}
+    
+/* Add the correct vertical alignment in Chrome, Firefox, and Opera */
+progress {
+      vertical-align: baseline;
+}
+    
+/* # =================================================================
+# Accessibility
+# ================================================================= */
+    
+/* Specify the progress cursor of updating elements */
+[aria-busy='true'] {
+      cursor: progress;
+}
+    
+/* Specify the pointer cursor of trigger elements */
+[aria-controls] {
+      cursor: pointer;
+}
+    
+/* Specify the unstyled cursor of disabled, not-editable, or otherwise inoperable elements */
+[aria-disabled='true'] {
+      cursor: default;
+}
+/* @media screen and (min-width: 1120px) {}
+
+@media screen and (min-width: 769px) {}
+
+@media screen and (min-width: 600px) {} */
+
+body{
+      font-family: 'Yu Gothic Medium', '游ゴシック Medium', Yugothic, '游ゴシック体', 'ヒラギノ角ゴ Pro W3', sans-serif;
+}
+
+/* ----------------------------------------------
+* header
+-----------------------------------------------*/
+.logo{
+      width: 150px;
+}
+.main-nav{
+      display: flex;
+      font-size: 1.25rem;
+      text-transform: uppercase;
+      margin-top: 34px;
+      list-style: none;
+}
+.main-nav li{
+      margin-left: 36px;
+}
+.main-nav li img{
+      width: 25px;
+}
+.main-nav li img:hover{
+      background: #5fb1de;
+      padding: 3px;
+}
+.main-nav a{
+      color: #fff;
+}
+.main-nav a:hover{
+      color: #5fb1de;
+}
+.page-header{
+      display: flex;
+      justify-content: space-between;
+}
+.wrapper{
+      max-width: 1520px;
+      margin: 0 auto;
+      padding: 0 4%;
+}
+/* ----------------------------------------------
+* HOME
+-----------------------------------------------*/
+.home-content{
+      text-align: center;
+      margin-top: 15%;
+}
+.home-content p{
+      font-size: 1.125rem;
+      margin: 10px 0 42px;
+}
+/* ----------------------------------------------
+* 見出し
+-----------------------------------------------*/
+.page-title{
+      font-size: 5rem;
+      font-family: 'Philosopher', serif;
+      text-transform: uppercase;
+      font-weight: normal;
+      text-shadow: #fff 0 2px;
+}
+.home-content p{
+      font-family: "Sawarabi Mincho";
+}
+/* ----------------------------------------------
+* ボタン
+-----------------------------------------------*/
+.button{
+      font-size: 1.375rem;
+      background: #fff;
+      color: #724f2f;
+      border-radius: 5px;
+      padding: 18px 32px;
+}
+.button:hover{
+      background: #724f2f;
+      color: #fff;
+}
+/* ----------------------------------------------
+* HOME TOP画像
+-----------------------------------------------*/
+.big-bg{
+      background-size: cover;
+      background-position: center top;
+      background-repeat: no-repeat;
+}
+#home{
+      background-image: url(cafe.img/AdobeStock_138006447.jpeg);
+      background-color: #5fb1de;
+      background-blend-mode: hard-light;
+      min-height: 100vh;
+}
+#home .page-title{
+      text-transform: none;
+}
+/* ----------------------------------------------
+* NEWS TOP画像
+-----------------------------------------------*/
+#news{
+      background-image: url(cafe.img/AdobeStock_272637013.jpeg);
+      height: 270px;
+      margin-bottom: 40px;
+      
+}
+#news .page-title{
+      text-align: center;
+}
+
+/* 記事スペース */
+article{
+      width: 58%;
+      order: 2;
+}
+article img{
+      margin-bottom: 20px;
+}
+article p{
+      margin-bottom: 1rem;
+}
+.post-info{
+      position: relative;
+      padding-top: 4px;
+      margin-bottom: 40px;
+}
+.post-date{
+      background: #5fb1de;
+      border-radius: 50%;
+      color: #fff;
+      width: 100px;
+      height: 100px;
+      font-size: 1.625rem;
+      text-align: center;
+      position: absolute;
+      top: 0;
+      padding-top: 10px;
+}
+.post-date span{
+      font-size: 1rem;
+      border-top: 1px rgba(255, 255, 255, .5) solid;
+      padding-top: 6px;
+      display: block;
+      width: 60%;
+      margin: 0 auto;
+}
+.post-title{
+      font-family: "Yu Mincho", "YuMincho", serif; /* 「游明朝」指定。なければ「セリフ体」となる */
+      font-size: 2rem;
+      font-weight: normal;
+}
+.post-title, .post-cat{
+      margin-left: 120px;
+}
+
+
+/* サイドバースペース */
+aside{
+      width: 20%;
+      order: 1;
+}
+aside p{
+      padding: 12px 10px;
+}
+.news-contents{
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 50px;
+}
+.sub-title{
+      font-size: 1.375rem;
+      padding: 0 8px 8px;
+      border-bottom: 2px #5fb1de solid;
+      font-weight: normal;
+}
+.sub-menu{
+      margin-bottom: 60px;
+      list-style: none;
+}
+.sub-menu li{
+      border-bottom: 1px #ddd solid;
+}
+.sub-menu a{
+      color: #432;
+      padding: 10px;
+      display: block;
+}
+.sub-menu a:hover{
+      color: #5fb1de;
+}
+
+/* adスペース */
+.ad{
+      width: 20%;
+      order: 3;
+}
+.ad img{
+      width: 100%;
+      height: 60%;
+      object-fit: cover;
+      padding: 10px 10px;
+}
+
+
+/* ----------------------------------------------
+* hamburgerボタン・メニュー
+-----------------------------------------------*/
+
+/* ----------------------------------------------
+* menuエリア/gridタイルエリア
+-----------------------------------------------*/
+#menu{
+      background-image: url(cafe.img/AdobeStock_210272931.jpeg);
+      min-height: 100vh;
+}
+.menu-content{
+      max-width: 560px;
+      margin-top: 10%;
+}
+.menu-content .page-title{
+      text-align: center;
+}
+.menu-content p{
+      font-size: 1.125rem;
+      margin: 10px 0 0;
+      color: #fff;
+}
+
+.grid{
+      display: grid;
+      grid-template-columns: repeat(3, minmax(240px, 1fr));
+      gap: 30px;
+      margin-top: 6%;
+      margin-bottom: 50px;
+}
+.item img{
+      border-radius: 5px;
+      /* width: 620px;
+      height: 600px; */
+      border: 10px solid #fff;
+      box-shadow: 0 0 5px #ddd;
+      line-height:0;
+      object-fit: cover;
+}
+.item :hover{
+      opacity: 0.7;
+}
+.item p{
+      font-size: 1.2rem;
+      line-height: 1.5;
+}
+.item a{
+      color: #724f2f;
+}
+.big-box{
+      grid-column: 1 / 3;
+      grid-row: 1 / 3;
+}
+.big-box img{
+      height: 91%;
+      width: 100%;
+      object-fit: cover;
+}
+
+/* ----------------------------------------------
+* Contactエリア
+-----------------------------------------------*/
+#contact{
+      background-image: url(cafe.img/AdobeStock_259716224.jpeg);
+}
+/* form */
+form div{
+      margin-bottom: 14px;
+}
+label{
+      font-size: 1.125rem;
+      color: #fff;
+      margin-top: 20px;
+      margin-bottom: 10px;
+      display: block;
+}
+input[type="text"],
+input[type="email"],
+textarea{
+      background: rgba(255, 255, 255, .5);
+      border: 1px #fff solid;
+      border-radius: 5px;
+      padding: 10px;
+      font-size: 1rem;
+}
+input[type="text"],
+input[type="email"]{
+      width: 100%;
+      max-width: 240px;
+}
+textarea{
+      width: 100%;
+      max-width: 480px;
+      height: 6rem;
+}
+input[type="submit"]{
+      border: none;
+      cursor: pointer;
+      line-height: 1;
+      margin: 40px 0;
+}
+
+/* 地図・店舗情報エリア */
+#location{
+      padding: 4% 0;
+}
+#location .wrapper{
+      display: flex;
+      justify-content: space-between;
+}
+.location-info{
+      width: 22%;
+      margin-bottom: 20px;
+}
+.location-info p{
+      padding: 12px 10px;
+}
+.location-info span{
+      padding: 12px 10px;
+}
+.location-info a{
+      font-size: 1.5rem;
+      color: #5fb1de;
+      border-bottom: 1px #5fb1de solid;
+}
+.location-info a:hover{
+      background: #724f2f;
+      color: #fff;
+      padding: 10px;
+}
+.location-map{
+      width: 74%;
+}
+/* 埋め込みHTMLマップ */
+iframe{
+      width: 100%;
+}
+
+/* SNSエリア */
+#sns{
+      background: #faf7f0;
+      padding: 4% 0;
+}
+#sns .wrapper{
+      display: flex;
+      justify-content: space-between;
+}
+#sns .sub-title{
+      margin-bottom: 30px;
+}
+.sns-box{
+      width: 30%;
+}
+
+/* ----------------------------------------------
+* footer
+-----------------------------------------------*/
+footer{
+      background: #432;
+      text-align: center;
+      padding: 26px 0;
+      margin-top: 50px;
+}
+footer p{
+      color: #fff;
+      font-size: 0.875rem;
+}
+
+/* ----------------------------------------------
+* レスポンシブ対応
+-----------------------------------------------*/
+@media (max-width: 600px){
+      .logo{
+            width: 100px;
+      }
+      .page-header{
+            flex-direction: column;
+            align-items: center;
+      }
+      .page-title{
+            font-size: 2.5rem;     
+      }
+      .home-content p{
+            font-size: .875rem;
+      }
+
+      /* header */
+      .main-nav{
+            font-size: 0.875rem;
+            margin-top: 10px;
+      }
+      .main-nav li{
+            margin: 0 20px;
+      }
+
+      /* home */
+      .home-content{
+            margin-top: 10%;
+      }
+
+      /* NEWS */
+      .news-contents{
+            flex-direction: column;
+      }
+      article,
+      aside{
+            width: 100%;
+      }
+
+      #news .page-title{
+            margin-top: 30px;
+      }
+      
+      /* 記事スペース */
+      .post-info{
+            margin-bottom: 30px;
+      }
+      .post-date{
+            width: 70px;
+            height: 70px;
+            font-size: 1rem;
+      }
+      .post-date span{
+            font-size: 0.875rem;
+            padding-top: 2px;
+      }
+      .post-title{
+            font-size: 1.375rem;
+      }
+      .post-cat{
+            font-size: 0.875rem;
+            margin-top: 10px;
+      }
+      .post-title, .post-cat{
+            margin-left: 80px;
+      }
+      .ad{
+            width: 100%;
+      }
+
+      /* Menuスペース */
+      .menu-content{
+            margin-top: 20%;
+      }
+      
+      .grid{
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      }
+      .big-box{
+            grid-column: auto;
+            grid-row: auto;
+      }
+      .big-box img{
+            height: 95%;
+      }
+      .grid br{
+            display: none;
+      }
+
+      /* 店舗情報・地図・SNS */
+      #location .wrapper,
+      #sns .wrapper{
+            flex-direction: column;
+      }
+      .location-info,
+      .location-map,
+      .sns-box{
+            width: 100%;
+      }
+      .sns-box{
+            margin-bottom: 30px;
+      }
+}
